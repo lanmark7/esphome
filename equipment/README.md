@@ -2,12 +2,16 @@
 
 The following equipment is what we will be using for this process.  Getting a board with a lower memory amount is a bit less but I wouldn't go below 2GB as there are a number of things we will want to run on the board such as a container runtime to make things a bit cleaner and easier to update.
 
-* Orange PI Zero 2W - 4GB
+![Orange PI Zero 2W - 4GB](.attachments/Orange-PI-Zero-2W-4GB.png)
+
+* [Orange PI Zero 2W - 4GB](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2W.html)
 * USB-C Power supply with switch
 * Mini HDMI to HDMI cable 
 * 128 GB MicroSD memory card
 
 I have purchased many different Raspberry Pi boards over the years but have been pretty impressed with the Orange Pi with the external antenna mount, larger memory sizes, USB-C power jacks all on a small form factor board.
+
+![XIAO ESP32c6](.attachments/XIAO-ESP32c6.png)
 
 # ESP32 Equipment (Sensor)
 
