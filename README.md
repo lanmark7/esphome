@@ -8,13 +8,15 @@ Direct from the [ESPHome website](https://esphome.io):
 
 "ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems."
 
-## Table of Contents
+## Configuration Steps
 
+### Host 
 * [Equipment List](equipment/README.md)
+* [Install and configure operating system](./provisioning/README.md)
+* (Optional) [Install and configure Azure IoT Edge](./azure/README.md)
 * Provisioning esphome server
-* Provisioning esp32 device
+
+### Sensor(s)
+* Provisioning ESP32 device
+* Over the air (OTA) configuration updates
 * Configuration Examples
-
-
-# Getting Started
-
