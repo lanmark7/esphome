@@ -23,7 +23,8 @@ sudo nano /etc/docker/daemon.json
 Add or change the file to look like this:
 ```json
 {
-    "log-driver": "local"
+    "log-driver": "local",
+    "dns": ["1.1.1.1", "8.8.8.8"]
 }
 ```
 

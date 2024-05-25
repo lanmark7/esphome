@@ -1,0 +1,26 @@
+#########################################
+# ESPHOME.io
+#########################################
+# https://stackoverflow.com/questions/46467295/pass-usb-device-into-a-docker-windows-container/75329923#75329923
+# usbipd wsl list
+# usbipd wsl attach -b 6-4
+version: "3.7"
+
+services:
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome:latest
+    restart: unless-stopped  
+    # privileged: true  
+    environment:
+      TZ: America/Chicago 
+    ports:
+      - 6052:6052  
+    volumes:
+      - ./volumes/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    devices:      
+      - /dev/bus:/dev/bus
+      # - /dev/ttyACM0:/dev/ttyACM0
+  

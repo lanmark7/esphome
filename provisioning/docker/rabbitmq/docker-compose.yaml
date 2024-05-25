@@ -1,0 +1,23 @@
+#########################################
+# RABBITMQ
+#########################################
+version: "3.7"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    environment:
+      - TZ=America/Chicago
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 15672:15672 # Management Port (HTTP only)
+      - 5672:5672 # AMQP
+      - 1883:1883 # MQTT
+      - 8883:8883 # MQTT (TLS)
+    volumes:
+      - ./volumes/data/:/var/lib/rabbitmq/mnesia
+      - ./volumes/log/:/var/log/rabbitmq/      
+      - ./plugins.conf:/etc/rabbitmq/enabled_plugins

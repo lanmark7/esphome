@@ -1,0 +1,24 @@
+#########################################
+# Home-Assistant
+#########################################
+version: "3.7"
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: home-assistant
+    privileged: true
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TZ: America/Chicago
+    ports:
+      - 8123:8123
+    volumes:
+      - ./volumes/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8123"]
+      interval: 30s
+      timeout: 10s
+      retries: 6

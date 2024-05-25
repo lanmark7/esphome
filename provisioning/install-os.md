@@ -22,28 +22,35 @@ As the Orange Pi boots it will expand the disk partition to fill the entire micr
 
 ![Orange Pi Welcome Screen](.attachments/orange-pi-welcome-screen.png)
 
-Next we need to update the hostname, timezone, etc by typing in:
+### Set Passwords
 
-    sudo orangepi-config
-    
-The default password is **orangepi**
+First thing we should always do is reset and default passwords.
 
-### System Settings
+Set the root password (so we can login as root later):
+```bash
+sudo passwd root
+```
+(Default password is **orangepi**)
 
-* Avahi: enable Avahi 
-* Hardware: enable all the i2c, pwm, and uart
-* Firmware: run updates and reboot
-
-The board will reboot and show the welcome screen again.
+Next set the autologin user password:
+```bash
+passwd
+```
 
 TIP: You can press the up arrow and down arrow to switch between the various last command line statements even after a reboot.   Go back into orangepi-config
 
-### Network Settings
 
-* IPv6: Disable
+### Attach to Wireless Network
+
+Next we need to update the hostname, and attach it to wifi:
+
+    sudo orangepi-config
+    
+#### Network Settings
+
 * Wifi: Connect to wireless network
 
-### Personal Settings
+#### Personal Settings
 
 * Timezone: set to your timezone
 * Hostname: change to something cool
@@ -52,24 +59,9 @@ After all your settings exit and type in:
 
     sudo reboot -n
 
-Do a update and upgrade:
-```bash
-sudo apt update
+Once the system reboots you can stop using the attached monitor and keyboard as you will now be able to login using SSH
 
-sudo apt upgrade
-```
-
-Do a kernal update:
+From your computer type in the following:
 ```bash
-sudo apt full-upgrade
-```
-
-Allow any held back packages to update
-```bash
-sudo apt dist-upgrade
-```
-
-Remove any packages no longer neeed
-```bash
-sudo apt autoremove
+ssh root@NEW_HOST_NAME
 ```
