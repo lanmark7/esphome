@@ -7,7 +7,7 @@ Remove these two files and reboot
     reboot -n
 ```
 
-Then to change the usern type in the following two commands replacing 'NEW_NAME' with whatever
+Then to change the username, type in the following two commands replacing 'NEW_NAME' with whatever
 ```bash
     usermod -l NEW_NAME -d /home/NEW_NAME -m orangepi
 ```
