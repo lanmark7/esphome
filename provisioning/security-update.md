@@ -65,9 +65,8 @@ sudo apt full-upgrade
 
 Do a update and upgrade:
 ```bash
-sudo apt update
-
-sudo apt upgrade
+sudo apt update; \
+  sudo apt upgrade
 ```
 
 Do a kernal update:
